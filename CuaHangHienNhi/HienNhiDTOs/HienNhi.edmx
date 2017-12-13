@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CuaHangModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="CuaHangModelStoreContainer">
+          <EntitySet Name="ChiTietHDBH" EntityType="CuaHangModel.Store.ChiTietHDBH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ChiTietHDNH" EntityType="CuaHangModel.Store.ChiTietHDNH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ChiTietSBH" EntityType="CuaHangModel.Store.ChiTietSBH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GiaBan" EntityType="CuaHangModel.Store.GiaBan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HoaDonBanHang" EntityType="CuaHangModel.Store.HoaDonBanHang" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HoaDonNhapHang" EntityType="CuaHangModel.Store.HoaDonNhapHang" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="KhachHang" EntityType="CuaHangModel.Store.KhachHang" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LoaiSP" EntityType="CuaHangModel.Store.LoaiSP" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NguoiDung" EntityType="CuaHangModel.Store.NguoiDung" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NhaCungCap" EntityType="CuaHangModel.Store.NhaCungCap" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SanPham" EntityType="CuaHangModel.Store.SanPham" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SoBanHang" EntityType="CuaHangModel.Store.SoBanHang" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SoChiTieuCuaHang" EntityType="CuaHangModel.Store.SoChiTieuCuaHang" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="ChiTietHDBH">
+          <Key>
+            <PropertyRef Name="MaCTHDBH" />
+          </Key>
+          <Property Name="MaCTHDBH" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="MaHDBH" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="MaSP" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="SoLuong" Type="smallint" Nullable="false" />
+          <Property Name="GiaBan" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChiTietHDNH">
+          <Key>
+            <PropertyRef Name="MaCTHDNH" />
+          </Key>
+          <Property Name="MaCTHDNH" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="MaHDNH" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="MaSP" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="Gia" Type="int" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChiTietSBH">
+          <Key>
+            <PropertyRef Name="MaCTSBH" />
+          </Key>
+          <Property Name="MaCTSBH" Type="char" Nullable="false" MaxLength="13" />
+          <Property Name="MaSBH" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="NgayTra" Type="datetime" Nullable="false" />
+          <Property Name="ThanhTien" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GiaBan">
+          <Key>
+            <PropertyRef Name="MaGia" />
+          </Key>
+          <Property Name="MaGia" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="MaKH" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="MaSP" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="Gia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HoaDonBanHang">
+          <Key>
+            <PropertyRef Name="MaHDBH" />
+          </Key>
+          <Property Name="MaHDBH" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="MaKH" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="NgayLap" Type="datetime" Nullable="false" />
+          <Property Name="CKPhanTram" Type="smallint" />
+          <Property Name="CKTienMat" Type="int" />
+          <Property Name="ThanhTien" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HoaDonNhapHang">
+          <Key>
+            <PropertyRef Name="MaHDNH" />
+          </Key>
+          <Property Name="MaHDNH" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="MaNCC" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="CKPhanTram" Type="smallint" />
+          <Property Name="CKTienMat" Type="int" />
+          <Property Name="ThanhTien" Type="int" Nullable="false" />
+          <Property Name="NgayLap" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="TenKH" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="SoDT" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="LoaiSP">
+          <Key>
+            <PropertyRef Name="MaLoai" />
+          </Key>
+          <Property Name="MaLoai" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="TenLoai" Type="nvarchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="NguoiDung">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="varchar(max)" Nullable="false" />
+          <Property Name="Role" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NhaCungCap">
+          <Key>
+            <PropertyRef Name="MaNCC" />
+          </Key>
+          <Property Name="MaNCC" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="TenNCC" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="SoDT" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="SanPham">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaLoai" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="MaSP" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="TenSP" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="HinhAnh1" Type="varchar(max)" />
+          <Property Name="HinhAnh2" Type="varchar(max)" />
+          <Property Name="HinhAnh3" Type="varchar(max)" />
+          <Property Name="HinhAnh4" Type="varchar(max)" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="MaNCC" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="GiaVon" Type="int" />
+        </EntityType>
+        <EntityType Name="SoBanHang">
+          <Key>
+            <PropertyRef Name="MaSBH" />
+          </Key>
+          <Property Name="MaSBH" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="NgayLap" Type="datetime" Nullable="false" />
+          <Property Name="MaKH" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="TongDuNo" Type="int" Nullable="false" />
+          <Property Name="NgayDongSo" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SoChiTieuCuaHang">
+          <Key>
+            <PropertyRef Name="MaCT" />
+          </Key>
+          <Property Name="MaCT" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="LyDoChi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NgayGio" Type="datetime" Nullable="false" />
+          <Property Name="TongTien" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="spGetGiaBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaKH" Type="char" Mode="In" />
+          <Parameter Name="MaSP" Type="char" Mode="In" />
+          <Parameter Name="GiaBan" Type="int" Mode="InOut" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CuaHangModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CuaHangEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiTietHDBHs" EntityType="CuaHangModel.ChiTietHDBH" />
+          <EntitySet Name="ChiTietHDNHs" EntityType="CuaHangModel.ChiTietHDNH" />
+          <EntitySet Name="ChiTietSBHs" EntityType="CuaHangModel.ChiTietSBH" />
+          <EntitySet Name="GiaBans" EntityType="CuaHangModel.GiaBan" />
+          <EntitySet Name="HoaDonBanHangs" EntityType="CuaHangModel.HoaDonBanHang" />
+          <EntitySet Name="HoaDonNhapHangs" EntityType="CuaHangModel.HoaDonNhapHang" />
+          <EntitySet Name="KhachHangs" EntityType="CuaHangModel.KhachHang" />
+          <EntitySet Name="LoaiSPs" EntityType="CuaHangModel.LoaiSP" />
+          <EntitySet Name="NguoiDungs" EntityType="CuaHangModel.NguoiDung" />
+          <EntitySet Name="NhaCungCaps" EntityType="CuaHangModel.NhaCungCap" />
+          <EntitySet Name="SanPhams" EntityType="CuaHangModel.SanPham" />
+          <EntitySet Name="SoBanHangs" EntityType="CuaHangModel.SoBanHang" />
+          <EntitySet Name="SoChiTieuCuaHangs" EntityType="CuaHangModel.SoChiTieuCuaHang" />
+          <FunctionImport Name="spGetGiaBan">
+            <Parameter Name="MaKH" Mode="In" Type="String" />
+            <Parameter Name="MaSP" Mode="In" Type="String" />
+            <Parameter Name="GiaBan" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="ChiTietHDBH">
+          <Key>
+            <PropertyRef Name="MaCTHDBH" />
+          </Key>
+          <Property Name="MaCTHDBH" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="true" />
+          <Property Name="MaHDBH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="MaSP" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="SoLuong" Type="Int16" Nullable="false" />
+          <Property Name="GiaBan" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChiTietHDNH">
+          <Key>
+            <PropertyRef Name="MaCTHDNH" />
+          </Key>
+          <Property Name="MaCTHDNH" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="true" />
+          <Property Name="MaHDNH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="MaSP" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="Gia" Type="Int32" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChiTietSBH">
+          <Key>
+            <PropertyRef Name="MaCTSBH" />
+          </Key>
+          <Property Name="MaCTSBH" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="true" />
+          <Property Name="MaSBH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="NgayTra" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ThanhTien" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GiaBan">
+          <Key>
+            <PropertyRef Name="MaGia" />
+          </Key>
+          <Property Name="MaGia" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="MaKH" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="MaSP" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="Gia" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HoaDonBanHang">
+          <Key>
+            <PropertyRef Name="MaHDBH" />
+          </Key>
+          <Property Name="MaHDBH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="MaKH" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CKPhanTram" Type="Int16" />
+          <Property Name="CKTienMat" Type="Int32" />
+          <Property Name="ThanhTien" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HoaDonNhapHang">
+          <Key>
+            <PropertyRef Name="MaHDNH" />
+          </Key>
+          <Property Name="MaHDNH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="MaNCC" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="CKPhanTram" Type="Int16" />
+          <Property Name="CKTienMat" Type="Int32" />
+          <Property Name="ThanhTien" Type="Int32" Nullable="false" />
+          <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="TenKH" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="SoDT" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LoaiSP">
+          <Key>
+            <PropertyRef Name="MaLoai" />
+          </Key>
+          <Property Name="MaLoai" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="TenLoai" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="NguoiDung">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Role" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NhaCungCap">
+          <Key>
+            <PropertyRef Name="MaNCC" />
+          </Key>
+          <Property Name="MaNCC" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="TenNCC" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="SoDT" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SanPham">
+          <Key>
+            <PropertyRef Name="MaSP" />
+          </Key>
+          <Property Name="MaLoai" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="MaSP" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="TenSP" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="HinhAnh1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="HinhAnh2" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="HinhAnh3" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="HinhAnh4" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="MaNCC" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="GiaVon" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SoBanHang">
+          <Key>
+            <PropertyRef Name="MaSBH" />
+          </Key>
+          <Property Name="MaSBH" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MaKH" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="true" />
+          <Property Name="TongDuNo" Type="Int32" Nullable="false" />
+          <Property Name="NgayDongSo" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SoChiTieuCuaHang">
+          <Key>
+            <PropertyRef Name="MaCT" />
+          </Key>
+          <Property Name="MaCT" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="LyDoChi" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NgayGio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TongTien" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CuaHangModelStoreContainer" CdmEntityContainer="CuaHangEntities">
+          <EntitySetMapping Name="ChiTietHDBHs">
+            <EntityTypeMapping TypeName="CuaHangModel.ChiTietHDBH">
+              <MappingFragment StoreEntitySet="ChiTietHDBH">
+                <ScalarProperty Name="MaCTHDBH" ColumnName="MaCTHDBH" />
+                <ScalarProperty Name="MaHDBH" ColumnName="MaHDBH" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietHDNHs">
+            <EntityTypeMapping TypeName="CuaHangModel.ChiTietHDNH">
+              <MappingFragment StoreEntitySet="ChiTietHDNH">
+                <ScalarProperty Name="MaCTHDNH" ColumnName="MaCTHDNH" />
+                <ScalarProperty Name="MaHDNH" ColumnName="MaHDNH" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietSBHs">
+            <EntityTypeMapping TypeName="CuaHangModel.ChiTietSBH">
+              <MappingFragment StoreEntitySet="ChiTietSBH">
+                <ScalarProperty Name="MaCTSBH" ColumnName="MaCTSBH" />
+                <ScalarProperty Name="MaSBH" ColumnName="MaSBH" />
+                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiaBans">
+            <EntityTypeMapping TypeName="CuaHangModel.GiaBan">
+              <MappingFragment StoreEntitySet="GiaBan">
+                <ScalarProperty Name="MaGia" ColumnName="MaGia" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HoaDonBanHangs">
+            <EntityTypeMapping TypeName="CuaHangModel.HoaDonBanHang">
+              <MappingFragment StoreEntitySet="HoaDonBanHang">
+                <ScalarProperty Name="MaHDBH" ColumnName="MaHDBH" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+                <ScalarProperty Name="CKPhanTram" ColumnName="CKPhanTram" />
+                <ScalarProperty Name="CKTienMat" ColumnName="CKTienMat" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HoaDonNhapHangs">
+            <EntityTypeMapping TypeName="CuaHangModel.HoaDonNhapHang">
+              <MappingFragment StoreEntitySet="HoaDonNhapHang">
+                <ScalarProperty Name="MaHDNH" ColumnName="MaHDNH" />
+                <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+                <ScalarProperty Name="CKPhanTram" ColumnName="CKPhanTram" />
+                <ScalarProperty Name="CKTienMat" ColumnName="CKTienMat" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhachHangs">
+            <EntityTypeMapping TypeName="CuaHangModel.KhachHang">
+              <MappingFragment StoreEntitySet="KhachHang">
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+                <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiSPs">
+            <EntityTypeMapping TypeName="CuaHangModel.LoaiSP">
+              <MappingFragment StoreEntitySet="LoaiSP">
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+                <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NguoiDungs">
+            <EntityTypeMapping TypeName="CuaHangModel.NguoiDung">
+              <MappingFragment StoreEntitySet="NguoiDung">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhaCungCaps">
+            <EntityTypeMapping TypeName="CuaHangModel.NhaCungCap">
+              <MappingFragment StoreEntitySet="NhaCungCap">
+                <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+                <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
+                <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SanPhams">
+            <EntityTypeMapping TypeName="CuaHangModel.SanPham">
+              <MappingFragment StoreEntitySet="SanPham">
+                <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="HinhAnh1" ColumnName="HinhAnh1" />
+                <ScalarProperty Name="HinhAnh2" ColumnName="HinhAnh2" />
+                <ScalarProperty Name="HinhAnh3" ColumnName="HinhAnh3" />
+                <ScalarProperty Name="HinhAnh4" ColumnName="HinhAnh4" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+                <ScalarProperty Name="GiaVon" ColumnName="GiaVon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SoBanHangs">
+            <EntityTypeMapping TypeName="CuaHangModel.SoBanHang">
+              <MappingFragment StoreEntitySet="SoBanHang">
+                <ScalarProperty Name="MaSBH" ColumnName="MaSBH" />
+                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="TongDuNo" ColumnName="TongDuNo" />
+                <ScalarProperty Name="NgayDongSo" ColumnName="NgayDongSo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SoChiTieuCuaHangs">
+            <EntityTypeMapping TypeName="CuaHangModel.SoChiTieuCuaHang">
+              <MappingFragment StoreEntitySet="SoChiTieuCuaHang">
+                <ScalarProperty Name="MaCT" ColumnName="MaCT" />
+                <ScalarProperty Name="LyDoChi" ColumnName="LyDoChi" />
+                <ScalarProperty Name="NgayGio" ColumnName="NgayGio" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spGetGiaBan" FunctionName="CuaHangModel.Store.spGetGiaBan" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

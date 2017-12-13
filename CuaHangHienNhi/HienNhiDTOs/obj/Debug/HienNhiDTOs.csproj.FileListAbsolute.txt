@@ -1,0 +1,10 @@
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\bin\Debug\HienNhiDTOs.dll.config
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\bin\Debug\HienNhiDTOs.dll
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\bin\Debug\HienNhiDTOs.pdb
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\bin\Debug\EntityFramework.dll
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\bin\Debug\MyException.dll
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\bin\Debug\MyException.pdb
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\bin\Debug\EntityFramework.xml
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\obj\Debug\HienNhiDTOs.csprojResolveAssemblyReference.cache
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\obj\Debug\HienNhiDTOs.dll
+F:\Projects\HienNhi\CuaHangHienNhi\HienNhiDTOs\obj\Debug\HienNhiDTOs.pdb

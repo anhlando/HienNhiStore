@@ -1,0 +1,4 @@
+F:\Projects\HienNhi\CuaHangHienNhi\MyException\bin\Debug\MyException.dll
+F:\Projects\HienNhi\CuaHangHienNhi\MyException\bin\Debug\MyException.pdb
+F:\Projects\HienNhi\CuaHangHienNhi\MyException\obj\Debug\MyException.dll
+F:\Projects\HienNhi\CuaHangHienNhi\MyException\obj\Debug\MyException.pdb

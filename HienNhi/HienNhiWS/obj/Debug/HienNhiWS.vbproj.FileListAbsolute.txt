@@ -1,0 +1,8 @@
+F:\Projects\HienNhi\HienNhi\HienNhiWS\obj\Debug\HienNhiWS.Resources.resources
+F:\Projects\HienNhi\HienNhi\HienNhiWS\obj\Debug\HienNhiWS.vbproj.GenerateResource.Cache
+F:\Projects\HienNhi\HienNhi\HienNhiWS\bin\HienNhiWS.dll
+F:\Projects\HienNhi\HienNhi\HienNhiWS\bin\HienNhiWS.pdb
+F:\Projects\HienNhi\HienNhi\HienNhiWS\bin\HienNhiWS.xml
+F:\Projects\HienNhi\HienNhi\HienNhiWS\obj\Debug\HienNhiWS.dll
+F:\Projects\HienNhi\HienNhi\HienNhiWS\obj\Debug\HienNhiWS.xml
+F:\Projects\HienNhi\HienNhi\HienNhiWS\obj\Debug\HienNhiWS.pdb

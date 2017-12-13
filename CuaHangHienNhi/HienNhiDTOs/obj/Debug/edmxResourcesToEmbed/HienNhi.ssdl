@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CuaHangModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CuaHangModelStoreContainer">
+    <EntitySet Name="ChiTietHDBH" EntityType="CuaHangModel.Store.ChiTietHDBH" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChiTietHDNH" EntityType="CuaHangModel.Store.ChiTietHDNH" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChiTietSBH" EntityType="CuaHangModel.Store.ChiTietSBH" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GiaBan" EntityType="CuaHangModel.Store.GiaBan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HoaDonBanHang" EntityType="CuaHangModel.Store.HoaDonBanHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HoaDonNhapHang" EntityType="CuaHangModel.Store.HoaDonNhapHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KhachHang" EntityType="CuaHangModel.Store.KhachHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoaiSP" EntityType="CuaHangModel.Store.LoaiSP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NguoiDung" EntityType="CuaHangModel.Store.NguoiDung" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NhaCungCap" EntityType="CuaHangModel.Store.NhaCungCap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SanPham" EntityType="CuaHangModel.Store.SanPham" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SoBanHang" EntityType="CuaHangModel.Store.SoBanHang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SoChiTieuCuaHang" EntityType="CuaHangModel.Store.SoChiTieuCuaHang" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="ChiTietHDBH">
+    <Key>
+      <PropertyRef Name="MaCTHDBH" />
+    </Key>
+    <Property Name="MaCTHDBH" Type="char" Nullable="false" MaxLength="12" />
+    <Property Name="MaHDBH" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="MaSP" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="SoLuong" Type="smallint" Nullable="false" />
+    <Property Name="GiaBan" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChiTietHDNH">
+    <Key>
+      <PropertyRef Name="MaCTHDNH" />
+    </Key>
+    <Property Name="MaCTHDNH" Type="char" Nullable="false" MaxLength="12" />
+    <Property Name="MaHDNH" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="MaSP" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="Gia" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChiTietSBH">
+    <Key>
+      <PropertyRef Name="MaCTSBH" />
+    </Key>
+    <Property Name="MaCTSBH" Type="char" Nullable="false" MaxLength="13" />
+    <Property Name="MaSBH" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="NgayTra" Type="datetime" Nullable="false" />
+    <Property Name="ThanhTien" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GiaBan">
+    <Key>
+      <PropertyRef Name="MaGia" />
+    </Key>
+    <Property Name="MaGia" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="MaKH" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="MaSP" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="Gia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoaDonBanHang">
+    <Key>
+      <PropertyRef Name="MaHDBH" />
+    </Key>
+    <Property Name="MaHDBH" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="MaKH" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="NgayLap" Type="datetime" Nullable="false" />
+    <Property Name="CKPhanTram" Type="smallint" />
+    <Property Name="CKTienMat" Type="int" />
+    <Property Name="ThanhTien" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoaDonNhapHang">
+    <Key>
+      <PropertyRef Name="MaHDNH" />
+    </Key>
+    <Property Name="MaHDNH" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="MaNCC" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="CKPhanTram" Type="smallint" />
+    <Property Name="CKTienMat" Type="int" />
+    <Property Name="ThanhTien" Type="int" Nullable="false" />
+    <Property Name="NgayLap" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="TenKH" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="SoDT" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="LoaiSP">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="TenLoai" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="NguoiDung">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar(max)" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="TenNCC" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="SoDT" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaLoai" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="MaSP" Type="char" Nullable="false" MaxLength="8" />
+    <Property Name="TenSP" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="HinhAnh1" Type="varchar(max)" />
+    <Property Name="HinhAnh2" Type="varchar(max)" />
+    <Property Name="HinhAnh3" Type="varchar(max)" />
+    <Property Name="HinhAnh4" Type="varchar(max)" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="MaNCC" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="GiaVon" Type="int" />
+  </EntityType>
+  <EntityType Name="SoBanHang">
+    <Key>
+      <PropertyRef Name="MaSBH" />
+    </Key>
+    <Property Name="MaSBH" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="NgayLap" Type="datetime" Nullable="false" />
+    <Property Name="MaKH" Type="char" Nullable="false" MaxLength="4" />
+    <Property Name="TongDuNo" Type="int" Nullable="false" />
+    <Property Name="NgayDongSo" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SoChiTieuCuaHang">
+    <Key>
+      <PropertyRef Name="MaCT" />
+    </Key>
+    <Property Name="MaCT" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="LyDoChi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NgayGio" Type="datetime" Nullable="false" />
+    <Property Name="TongTien" Type="int" Nullable="false" />
+  </EntityType>
+  <Function Name="spGetGiaBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaKH" Type="char" Mode="In" />
+    <Parameter Name="MaSP" Type="char" Mode="In" />
+    <Parameter Name="GiaBan" Type="int" Mode="InOut" />
+  </Function>
+</Schema>
